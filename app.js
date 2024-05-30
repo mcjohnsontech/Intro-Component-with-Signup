@@ -1,15 +1,31 @@
-const form = document.getElementById('form');
-const button = document.getElementById('button');
-const firstName = document.querySelector('.firstName');
-const lastName = document.querySelector('.lastName');
-const email = document.querySelector('.email');
-const password = document.querySelector('.password');
+const form = document.getElementById("form");
+const button = document.getElementById("button");
+const firstName = document.querySelector(".firstName");
+const lastName = document.querySelector(".lastName");
+const email = document.querySelector(".email");
+const password = document.querySelector(".password");
+// Get the label's names as i would be using them
+
+const firstParagraph = document.querySelector(".firstP");
+const secondParagraph = document.querySelector(".secondP");
+const thirdParagraph = document.querySelector(".thirdP");
+const fourthParagraph = document.querySelector(".fourthP");
+
+const holdingPlace = document.querySelector("[placholder]");
+
+const para = document.createElement("p");
+const node = document.createTextNode("First Name cannot be ");
+
+const jill = document.querySelectorAll("i");
+
+const hi = para.appendChild(node);
+console.log(para);
 
 console.log(firstName);
 
 // console.log(firstName, lastName, email, password);
 
-form.addEventListener('submit', (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   const fName = firstName.value;
   const lName = lastName.value;
@@ -18,32 +34,50 @@ form.addEventListener('submit', (e) => {
   console.log(fName, lName, emailVal, passwordVal);
 
   // Check first name
-  if (fName === '') {
-    firstName.classList.add('error');
+  if (fName === "") {
+    firstName.classList.add("error");
+    firstParagraph.style.display = "block";
+    jill[0].style.display = "block";
   } else {
-    firstName.classList.remove('error');
+    firstName.classList.remove("error");
+    firstParagraph.style.display = "none";
+    jill[0].style.display = "none";
   }
   // Check last name
 
-  if (lName === '') {
-    lastName.classList.add('error');
+  if (lName === "") {
+    lastName.classList.add("error");
+    secondParagraph.style.display = "block";
+    jill[1].style.display = "block";
   } else {
-    lastName.classList.remove('error');
+    lastName.classList.remove("error");
+    secondParagraph.style.display = "none";
+    jill[1].style.display = "none";
   }
   // Check email
 
-  if (!validateEmail(emailVal) || emailVal === '') {
-    email.classList.add('error');
+  if (!validateEmail(emailVal) || emailVal === "") {
+    email.classList.add("error");
+    thirdParagraph.style.display = "block";
+    email.style.color = "var(--red)";
+    jill[2].style.display = "block";
   } else {
-    email.classList.remove('error');
+    email.classList.remove("error");
+    thirdParagraph.style.display = "none";
+    email.style.color = "var(--black)";
+    jill[2].style.display = "none";
   }
 
   // Check password
 
-  if (passwordVal === '') {
-    password.classList.add('error');
+  if (passwordVal === "") {
+    password.classList.add("error");
+    fourthParagraph.style.display = "block";
+    jill[3].style.display = "block";
   } else {
-    password.classList.remove('error');
+    password.classList.remove("error");
+    fourthParagraph.style.display = "none";
+    jill[3].style.display = "none";
   }
 });
 
@@ -53,4 +87,4 @@ function validateEmail(email) {
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
-""
+("");
