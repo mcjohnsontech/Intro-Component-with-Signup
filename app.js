@@ -11,8 +11,16 @@ const secondParagraph = document.querySelector(".secondP");
 const thirdParagraph = document.querySelector(".thirdP");
 const fourthParagraph = document.querySelector(".fourthP");
 const eyeHide = document.querySelector(".eyeHide");
-
+const showShaa = document.querySelector(".show-always");
 const holdingPlace = document.querySelector("[placholder]");
+
+const para = document.createElement("p");
+const node = document.createTextNode("First Name cannot be ");
+
+const jill = document.querySelectorAll("i");
+
+const hi = para.appendChild(node);
+console.log(para);
 
 console.log(firstName);
 
@@ -75,11 +83,12 @@ form.addEventListener("submit", (e) => {
   if (passwordVal === "") {
     password.classList.add("error");
     fourthParagraph.style.display = "block";
-    jill[3].style.display = "block";
+    jill[4].style.display = "block";
+    showShaa.style.display = "none";
   } else {
     password.classList.remove("error");
     fourthParagraph.style.display = "none";
-    jill[3].style.display = "none";
+    jill[4].style.display = "none";
   }
 });
 
