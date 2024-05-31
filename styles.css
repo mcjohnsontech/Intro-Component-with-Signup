@@ -153,6 +153,12 @@ i {
   display: none;
 }
 
+i.show-always{
+  display: block;
+}
+
+/*  */
+
 @media (max-width: 440px) {
   main.container {
     flex-direction: column;

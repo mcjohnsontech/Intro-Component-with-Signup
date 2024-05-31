@@ -10,19 +10,21 @@ const firstParagraph = document.querySelector(".firstP");
 const secondParagraph = document.querySelector(".secondP");
 const thirdParagraph = document.querySelector(".thirdP");
 const fourthParagraph = document.querySelector(".fourthP");
+const eyeHide = document.querySelector(".eyeHide");
 
 const holdingPlace = document.querySelector("[placholder]");
 
-const para = document.createElement("p");
-const node = document.createTextNode("First Name cannot be ");
-
-const jill = document.querySelectorAll("i");
-
-const hi = para.appendChild(node);
-console.log(para);
-
 console.log(firstName);
 
+function showAlways() {
+  if (eyeHide.src.endsWith("eye-password-hide.svg")) {
+    eyeHide.src = "./images/eye-outline.svg";
+    password.type ="text"
+  } else if (eyeHide.src.endsWith("eye-outline.svg")) {
+    eyeHide.src = "./images/eye-password-hide.svg";
+    password.type ="password"
+  }
+}
 // console.log(firstName, lastName, email, password);
 
 form.addEventListener("submit", (e) => {
